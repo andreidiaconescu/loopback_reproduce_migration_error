@@ -1,7 +1,8 @@
 # loopback_reproduce_migration_error
 # steps to reproduce:
-1. docker-compose -f docker-compose.development.yml build
-2. docker-compose -f docker-compose.development.yml up
+1. cp env_sample env
+2. docker-compose -f docker-compose.development.yml build
+3. docker-compose -f docker-compose.development.yml up
 
 relevant Output:
 ```
