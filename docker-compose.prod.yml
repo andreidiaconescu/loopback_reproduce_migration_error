@@ -1,0 +1,75 @@
+version: '2.4'
+
+services:
+  loopback_app:
+    # build: .
+    build:
+      context: .
+      dockerfile: Dockerfile.prod
+    restart: always
+    ports:
+      - '3000:3000'
+    expose:
+      - 3000
+    # environment:
+    #   - SERVICE_NAME=API
+    #   - PORT=8080
+    #   - VIRTUAL_PORT=8080
+    #   - VIRTUAL_HOST=${VIRTUAL_HOST}
+    #   - LETSENCRYPT_HOST=${VIRTUAL_HOST}
+    #   - MONGODB_HOST=mongo
+    #   - MONGODB_DATABASE=api-data
+    #   - MONGODB_PORT=27017
+    #   - MONGODB_USERNAME=$MONGO_INITDB_ROOT_USERNAME
+    #   - MONGODB_PASSWORD=$MONGO_INITDB_ROOT_PASSWORD
+    #   - MONGO_AUTHENTICATION_DATABASE=admin
+    #   - ELASTIC_SEARCH_HOST=elasticsearch
+    #   - ELASTIC_SEARCH_PORT=9200
+    #   - NODE_ENV=production
+    #   - ODOO_API_BASE_URL=$ODOO_API_BASE_URL
+    #   - ODOO_API_KEY=$ODOO_API_KEY
+    #   - GOOGLE_MAPS_API_KEY=$GOOGLE_MAPS_API_KEY
+    # volumes:
+    #   - ./api/src/app/public/uploads:/app/src/app/public/uploads
+    networks:
+      - loopback_app
+
+  # mongo:
+  #   image: mongo
+  #   ports:
+  #     - 27041:27017
+  #   environment:
+  #     - MONGO_INITDB_ROOT_USERNAME=$MONGO_INITDB_ROOT_USERNAME
+  #     - MONGO_INITDB_ROOT_PASSWORD=$MONGO_INITDB_ROOT_PASSWORD
+  #   # logging:
+  #   #   driver: none
+  #   volumes:
+  #     - loopback_app-mongo-db:/data/db
+  #   networks:
+  #     - loopback_app
+
+  # elasticsearch:
+  #   image: docker.elastic.co/elasticsearch/elasticsearch:7.7.0
+  #   environment:
+  #     - cluster.name=docker-cluster
+  #     - bootstrap.memory_lock=true
+  #     - 'ES_JAVA_OPTS=-Xms512m -Xmx512m'
+  #   ulimits:
+  #     memlock:
+  #       soft: -1
+  #       hard: -1
+  #   volumes:
+  #     - elasticSearchVolume:/usr/share/elasticsearch/data
+  #     - './elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml'
+  #   ports:
+  #     - 9200:9200
+  #   networks:
+  #     - loopback_app
+
+networks:
+  loopback_app:
+    driver: bridge
+# volumes:
+#   loopback_app-mongo-db:
+#   elasticSearchVolume:
+#     driver: local

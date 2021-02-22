@@ -1,0 +1,22 @@
+{
+  "ids": {
+    "Todo": 6,
+    "User": 2,
+    "UserCredentials": 2
+  },
+  "models": {
+    "Todo": {
+      "1": "{\"title\":\"Take over the galaxy\",\"desc\":\"MWAHAHAHAHAHAHAHAHAHAHAHAHAMWAHAHAHAHAHAHAHAHAHAHAHAHA\",\"id\":1}",
+      "2": "{\"title\":\"destroy alderaan\",\"desc\":\"Make sure there are no survivors left!\",\"id\":2}",
+      "3": "{\"title\":\"play space invaders\",\"desc\":\"Become the very best!\",\"id\":3}",
+      "4": "{\"title\":\"crush rebel scum\",\"desc\":\"Every.Last.One.\",\"id\":4}",
+      "5": "{\"title\":\"get the milk a\",\"desc\":\"string\",\"isComplete\":true,\"id\":5}"
+    },
+    "User": {
+      "a1": "{\"id\":\"a1\",\"realm\":\"realm1\",\"username\":\"usr1\",\"email\":\"andrei.diaconescu@anais.digital\",\"emailVerified\":true,\"verificationToken\":\"string\"}"
+    },
+    "UserCredentials": {
+      "decdd3ae-ed0c-4ec0-a182-13ce69a3bd7c": "{\"id\":\"decdd3ae-ed0c-4ec0-a182-13ce69a3bd7c\",\"password\":\"$2a$10$VtHVgPMV9.VyiwCGNETVjekcgn3Is4e8IeT3QFd7ZRnpL.NmO8Agq\",\"userId\":\"a1\"}"
+    }
+  }
+}
